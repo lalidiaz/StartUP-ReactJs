@@ -1,34 +1,69 @@
 import React from 'react'
 import Card from '../Card'
 import './style.css'
-import image1 from '../../assets/image1.png'
-import image2 from '../../assets/image2.png'
+import ecobags from '../../assets/ecobags.png';
+import impossiblefoods from '../../assets/impossiblefoods.png'
+import elevate from '../../assets/elevate.png';
+import holganix from '../../assets/holganix.png';
+
+
 
 class Cards extends React.Component {
-    render() {
-        const startUps = [
-            {
-                img: image1,
-                title: "CourseIt",
-                description: 'Description CourseIt'
-            },
-            {
-                img: image2,
-                title: 'Endava',
-                description: 'Description Endava'
-            }
-        ]
+    constructor(props) {
+        super(props)
 
-        
-        return (
-            <div className='cardWrapper'>
-                {startUps.map((startUp, key)=>{
-                    return(
-                        <Card key={key} startUp={startUp}/>
-                    )
-                })}
-            </div>
-        )
+        this.state = {
+            cards: [
+                {
+                    img: ecobags,
+                    name: "Eco Bags",
+                    description: 'We produce responsibly made and sourced bags so that reusable becomes a way of life.'
+                },
+                {
+                    img: impossiblefoods,
+                    name: 'Impossible Foods Inc',
+                    description: 'We use plans to make the best meats and cheeses you’ll ever eat'
+                },
+                {
+                    img: elevate,
+                    name: "Elevate Structure",
+                    description: 'A dream of developing profitable real estate by building eco-friendly structures.'
+                },
+                {
+                    img: holganix,
+                    name: 'Holganix',
+                    description: 'Environmentally-friendly lawn care products that contain natural microorganisms.'
+                }
+            ]
+        }
     }
-}
-export default Cards
+
+
+
+
+
+    render() {
+        const { cards } = this.state;
+        const { filter } = this.props;
+        return (
+          <div className="cardWrapper">
+            {cards.map((card, key) => {
+              return (
+                <React.Fragment>
+                  {card.name.includes(filter) && (
+                    <Card
+                      key={key}
+                      name={card.name}
+                      img={card.img}
+                      description={card.description}
+                    />
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        );
+      }
+    }
+    
+    export default Cards;

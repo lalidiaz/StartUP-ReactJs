@@ -2,35 +2,39 @@
     background-color: #212121;
     width: 98%;
     height: 40px;
-    margin:10px;
     color:#FFF;
     display: flex;
-    font-size: 16px;
-    
+    font-size: 16px;   
 }
 
+h1{
+    padding:5px;
+}
 .text{
     padding:10px;
     margin-left: 10px;
-   
 }
 
-.input{
-    height: 20px;
+.inputNav{
+    height: 26px;
     width:200px;
     border-radius:5px;
     margin:8px;
-    background-color:#757575;
+    background-color:#7e7e7e;
     border:none;
-   
+    outline:none;
+    color:white;
+    font-weight: bold;   
 }
-
 
 
 .addStartUp{
     padding:10px;
     margin-left: 10px;
-    color:#616161;
+    background-color: #212121;
+    border:none;
+    color:gray;
+
    
 
 }

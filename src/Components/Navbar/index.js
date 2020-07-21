@@ -1,31 +1,33 @@
 import React from 'react'
 import './style.css'
+import { Link } from 'react-router-dom';
+
+
 
 class Navbar extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            inputValue: ''
-        }
-    }
-
     handleChange(e) {
-        console.log(e.target.value)
-        this.setState({
-            inputValue: e.target.value
-        })
+      const inputValue = e.target.value;
+      const { getData } = this.props;
+  
+      getData(inputValue);
     }
-
+  
     render() {
-        return (
-            <div className='navBar'>
-                <span className='text'>ARGENTINIAN START UP</span>
-                <input className='input' type='text' placeholder='Search..' onChange={(e) => this.handleChange(e)} />
-                <p>{this.state.inputValue}</p>
-                <span className='addStartUp'>Add Start up</span>
-            </div>
-        )
+      return (
+        <nav className="navBar">
+            <h1>ECO Friendly Startups</h1>
+            <input className='inputNav'
+              onChange={(e) => this.handleChange(e)}
+              type=""
+              placeholder="Buscar startup"
+            />
+          <Link to='/Add'>
+          <button className='addStartUp'>Add Startup</button>
+          </Link>
+          
+        </nav>
+      );
     }
-}
-export default Navbar 
+  }
+  
+  export default Navbar;

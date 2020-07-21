@@ -2,13 +2,14 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
-   
+
 }
 
 
-h5{
+p{
     text-align: center;
     font-weight: light;
+    font-size: 12px;
     
     a{
         text-decoration: none;
